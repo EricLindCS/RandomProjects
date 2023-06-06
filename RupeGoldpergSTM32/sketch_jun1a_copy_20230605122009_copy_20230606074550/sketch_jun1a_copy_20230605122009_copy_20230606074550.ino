@@ -1,63 +1,45 @@
-#define BUTTON_PIN PB3
+#define BUTTON_PIN PB5
+#define ENDPNEU PB8
+#define RAMPPNEU PB7
+#define LED_BUILTIN PC13
+#define BUTTON_PIN_2 PB9
 
 void setup() {
-  // put your setup code here, to run once:
-  pinMode(PB7, OUTPUT);
-  pinMode(PB5, INPUT);
-  pinMode(PC13, OUTPUT);
-  digitalWrite(PB7, HIGH);
-  digitalWrite(PC13, LOW);
-  delay(1000);
   
-  digitalWrite(PB7, LOW);
-  digitalWrite(PC13, HIGH);
+  pinMode(ENDPNEU, OUTPUT);
+  //pinMode(PB5, INPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
   pinMode(BUTTON_PIN, INPUT_PULLUP);
+  pinMode(RAMPPNEU, OUTPUT);
+  pinMode(BUTTON_PIN_2, INPUT_PULLUP);
+
+  digitalWrite(LED_BUILTIN, LOW);
+  digitalWrite(RAMPPNEU, HIGH);
+  delay(1000);
+  digitalWrite(RAMPPNEU, LOW);
+  digitalWrite(LED_BUILTIN, HIGH);
+  
   delay(2000);
 
-  pinMode(PB8, OUTPUT);
-     pinMode(PB9, INPUT_PULLUP);
-
-
-
 }
-
-bool hast = false;
 
 void loop() {
 
   // put your main code here, to run repeatedly:
   if(!digitalRead(BUTTON_PIN)){
-   // if(!hast){
-    //  hast = true;
-    //  delay(1000);
-    //  digitalWrite(PB7, HIGH);
-    //}
     delay(1000);
-    digitalWrite(PB7, HIGH);
+    digitalWrite(RAMPPNEU, HIGH);
     delay(3000);
-    digitalWrite(PB7, LOW);
+    digitalWrite(RAMPPNEU, LOW);
   }
-  
-  delay(1000);
-  /*
-  digitalWrite(PB7, LOW);
-  digitalWrite(PC13, HIGH);
-  delay(1000);
-    hast = false;
-*/
 
-  if(digitalRead(PB9)){
-    digitalWrite(PB8, HIGH);
+  if(digitalRead(BUTTON_PIN_2)){
+    digitalWrite(ENDPNEU, HIGH);
   }
   else {
-    digitalWrite(PB8, LOW);
+    digitalWrite(ENDPNEU, LOW);
   }
-//digitalWrite(PB8, LOW);
-//delay(1000);
-//digitalWrite(PB8, HIGH);
 
-
-
-  delay(100);
+  delay(200);
   
 }
