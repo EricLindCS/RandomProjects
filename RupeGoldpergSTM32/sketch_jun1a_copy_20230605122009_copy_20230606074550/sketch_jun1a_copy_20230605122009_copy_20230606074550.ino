@@ -2,8 +2,8 @@
 //Not required, but makes it easier to keep track of what does what
 
 #define BUTTON_PIN PB5 //Contact pin 1
-#define ENDPNEU PB8 //Relay out (single action solonoid)
-#define RAMPPNEU PB7 //Relay out (double-action solonoid)
+#define ENDPNEU PB8 //Relay out (single action solenoid)
+#define RAMPPNEU PB7 //Relay out (double-action solenoid)
 #define LED_BUILTIN PC13 //Board's built in LED
 #define BUTTON_PIN_2 PB9 //Contact pin 2
 

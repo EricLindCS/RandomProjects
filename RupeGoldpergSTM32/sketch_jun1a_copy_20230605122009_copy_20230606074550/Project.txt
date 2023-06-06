@@ -1,0 +1,12 @@
+2023 AP Physics Final Project (Well documented for judging)
+
+Main Materials Used:
+
+STM32: https://stm32-base.org/boards/STM32F103C8T6-RobotDyn-Black-Pill.html
+Relay: https://www.amazon.com/SainSmart-101-70-100-2-Channel-Relay-Module/dp/B0057OC6D8 (Not the exact one, but is idential in function)
+
+Pneumatics:
+Solenoid 1: https://www.andymark.com/products/double-solenoid-valve-mead-1-8-npt
+Solenoid 2: https://www.smcpneumatics.com/SY113-SMO-PM3-F.html 
+Cylinder 1: https://www.andymark.com/products/double-acting-3-4-in-bore-air-cylinders-different-lengths?Stroke=2%20in.&quantity=1 
+Cylinder 2: https://www.smcpneumatics.com/NCJ2D10-200S.html 
