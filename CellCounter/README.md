@@ -10,10 +10,7 @@ The 7-segment display I had (common-anode double 7-segment) did not have any doc
 
 [(Here it is if somone online is attempting to find a pinout for the LONETEK D-353L)](lcdpinout.cpp)
 
-
-
-
 ## Project Diagram
 
-![alt text](https://github.com/EricLindCS/RandomProjects/tree/main/CellCounter/diagram.png?raw=true)
+![](https://raw.githubusercontent.com/EricLindCS/RandomProjects/main/CellCounter/diagram.png)
 
