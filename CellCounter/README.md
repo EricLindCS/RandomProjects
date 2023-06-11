@@ -6,21 +6,14 @@ The machine is very simple, it's just 3 buttons and a 14 segment display, so I t
 
 I had also never really programmed a 7-segment display (I've found LCDs much easier), so I thought it would be a good time to use one. 
 
-The 7-segment display I had (common-anode double 7-segment) did not have any documentation anywhere online, so it took a while to manually find the pinout. (Here it is if somone online is attempting to find a pinout for the LONETEK D-353L)
+The 7-segment display I had (common-anode double 7-segment) did not have any documentation anywhere online, so it took a while to manually find the pinout. 
 
-      CA1 G  F  A  B
-       |  |  |  |  |      -> pins and segments they control
-   ---------    ---------
-   |   A   |    |   A   |
-  F|       |B  F|       |B
-   |---G---|    |---G---|
-  E|       |C  E|       |C
-   |   D   |    |   D   |
-   ---------    ---------
-        |  |  |  |  |      -> pins and segments they control
-        D  DP E  C CA2         
+[(Here it is if somone online is attempting to find a pinout for the LONETEK D-353L)](lcdpinout.cpp)
+
+
+
 
 ## Project Diagram
 
-![Diagram](https://github.com/EricLindCS/RandomProjects/tree/main/CellCounter/diagram.png "Diagram")
+![alt text](https://github.com/EricLindCS/RandomProjects/tree/main/CellCounter/diagram.png?raw=true)
 
