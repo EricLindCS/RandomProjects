@@ -39,10 +39,6 @@ void loop()
 {
     _potetn = analogRead(POTENTIOMETER); //get potentiometer value, 0 to 1023
 
-    //ignore this//
-    //Serial.write(_potetn.ToString());
-    //Serial.write(" & ");
-
     //do math to change potentiometer value from 0-1023 to either 0,1,2,3,4 and print that value to console
     _potetn = map(_potetn, 0, 1023, 0, 4);
     Serial.println(_potetn);
@@ -52,20 +48,26 @@ void loop()
     {
     case 0:
         lightup(0);
+        //do something
         break;
     case 1:
         lightup(1);
+        //do something
         break;
     case 2:
         lightup(2);
+        //do something
         break;
     case 3:
         lightup(3);
+        //do something
         break;
     case 4:
         lightup(4);
+        //do something
         break;
     default:
+        //do something
         break;
     }
 
