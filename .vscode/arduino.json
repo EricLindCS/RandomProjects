@@ -1,0 +1,5 @@
+{
+    "sketch": "Potentiometer\\Potentiometer.ino",
+    "board": "arduino:avr:uno",
+    "port": "COM3"
+}
