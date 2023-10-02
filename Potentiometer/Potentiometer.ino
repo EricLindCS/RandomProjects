@@ -1,4 +1,4 @@
-int _potetn = 0; //global variable, not nessesary here but why not
+int _potetn = 0; //global variable, not nessesary here but why not, initalize to zero or bad things MAY happen
 
 //define pins using phrases, not nessesary, but good practice
 #define POTENTIOMETER 0
