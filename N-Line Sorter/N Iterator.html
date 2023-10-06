@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>N-Line Sorter</title>
+</head>
+<body>
+    <h1>N-Line Sorter</h1>
+    <h3>Input Gcode:</h3>
+    <p>All lines to be numbered must have an 'N' at the start.</p>
+    <input type="file" id="fileInput" accept=".txt"><br>
+    <textarea id="manualInput" rows="10" cols="50" placeholder="Enter text here..."></textarea><br>
+    <button onclick="processText()">Process Text</button>
+    <h3>Numbered Gcode:</h3>
+    <textarea id="outputText" rows="10" cols="50" readonly></textarea>
+    <a id="downloadLink" style="display: none;">Download Modified File</a>
+
+    <script>
+        function processText() {
+            const manualInput = document.getElementById("manualInput");
+            const outputText = document.getElementById("outputText");
+            const downloadLink = document.getElementById("downloadLink");
+
+            const inputText = manualInput.value;
+            let lines = inputText.split('\n');
+            let prevNumber = 0;
+            let modifiedLines = [];
+
+            for (let i = 0; i < lines.length; i++) {
+                let line = lines[i];
+                
+                if (line.startsWith("N")) {
+                    const parts = line.split(' ');
+                    
+                    if (parts.length >= 2) {
+                        const currentNumber = parseInt(parts[0].substring(1));
+                        console.log(currentNumber);
+                        //if (!isNaN(currentNumber)) {
+                            const modifiedNumber = prevNumber + 5;
+                            line = `N${modifiedNumber}${line.substring(parts[0].length)}`;
+                            prevNumber = modifiedNumber;
+                       // }
+                    }
+                }
+
+                modifiedLines.push(line);
+            }
+
+            const modifiedText = modifiedLines.join('\n');
+            outputText.value = modifiedText;
+            downloadLink.style.display = "block";
+            downloadLink.href = URL.createObjectURL(new Blob([modifiedText], { type: "text/plain" }));
+            downloadLink.download = "modified.txt";
+        }
+
+        // Update the manual input when a file is selected
+        document.getElementById("fileInput").addEventListener("change", function() {
+            const fileInput = document.getElementById("fileInput");
+            const manualInput = document.getElementById("manualInput");
+            if (fileInput.files[0]) {
+                const file = fileInput.files[0];
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    manualInput.value = e.target.result;
+                };
+                reader.readAsText(file);
+            }
+        });
+    </script>
+</body>
+</html>
